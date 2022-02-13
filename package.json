@@ -3,20 +3,25 @@
   "version": "1.0.0",
   "description": "A playground project for testing Typescript with Node.js",
   "main": "index.js",
+  "repository": "https://github.com/vinnylinck/ts-sandbox.git",
+  "author": "Vinicius Linck <vinnylinck@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "ts-node src/main.ts",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vinnylinck/ts-sandbox.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vinnylinck/ts-sandbox/issues"
-  },
-  "homepage": "https://github.com/vinnylinck/ts-sandbox#readme",
   "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "@types/node": "^17.0.17",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.4",
+    "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
   }
 }
