@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "nodemon",
-    "dev": "tsc-watch --onSuccess \"npm run watch\"",
+    "dev": "tsc-watch --onSuccess \"yarn watch\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore ."
   },
   "devDependencies": {
