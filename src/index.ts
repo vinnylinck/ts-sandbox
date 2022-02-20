@@ -2,18 +2,17 @@ import http from 'http';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
-import { DocumentNode } from 'graphql';
-import { IResolvers } from '@graphql-tools/utils';
-import tdfs from './typeDefs';
-import rslvrs from './resolvers';
+import { GraphQLSchema } from 'graphql';
+import { context } from './context';
+import sch from './schema';
 
-async function startApolloServer(typeDefs: DocumentNode[], resolvers: IResolvers[]) {
+async function startApolloServer(schema: GraphQLSchema) {
   const app = express();
   const httpServer = http.createServer(app);
   const server = new ApolloServer({
-    typeDefs,
-    resolvers,
+    schema,
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    context,
   });
   await server.start();
 
@@ -24,4 +23,4 @@ async function startApolloServer(typeDefs: DocumentNode[], resolvers: IResolvers
   });
 }
 
-startApolloServer(tdfs, rslvrs);
+startApolloServer(sch);
