@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added support to `.graphql` files via `@graphsql-tools`;
 
 ### Changed
+- Switched from PoC folder structure to a more "SDL first" approach (https://github.com/prisma/prisma-examples/blob/latest/typescript/graphql-sdl-first);
 - Everything... or almost;
 
 ### Removed
