@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+    postgres:
+        container_name: postgres
+        image: postgres:14.2
+        environment:
+            POSTGRES_USER: johndoe
+            POSTGRES_PASSWORD: goosfraba
+            POSTGRES_DB: tssandbox
+        ports:
+            - 5432:5432
